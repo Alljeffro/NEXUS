@@ -1,0 +1,15 @@
+[build]
+  # Commande pour installer et compiler ton projet React avec Vite
+  command = "npm run build"
+  # Le dossier que Vite génère et que Netlify doit publier sur le web
+  publish = "dist"
+
+[functions]
+  # Indique à Netlify où se trouvent tes fonctions backend (ton dossier api)
+  node_bundler = "esbuild"
+
+[[redirects]]
+  # Permet à React Router ou à ton interface de gérer les routes sans faire d'erreur 404
+  from = "/*"
+  status = 200
+  to = "/index.html"
